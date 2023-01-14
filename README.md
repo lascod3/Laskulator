@@ -7,4 +7,6 @@ equalOps method has a String as a parameter, I passed the sign in there since th
 I used a switch to determine which sign had been entered. The sign entered calls the corresponding
 method.
 
-![Screenshot 2023-01-14 at 02 15 00](https://user-images.githubusercontent.com/57866950/212446201-c5704708-4e57-4ffc-917d-724f711f8d17.png)
+
+![Screenshot 2023-01-14 at 02 17 24](https://user-images.githubusercontent.com/57866950/212446290-d8641220-42dd-4058-9ccc-740d4cb45c2b.png)
+
