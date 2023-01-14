@@ -83,14 +83,11 @@ public class Laskulator extends JFrame implements ActionListener{
 		gbc.gridx = 4;
 		gbc.gridy = 0;
 		
-		// gbc.weighty = 1;
-		// gbc.weightx = 44;
 		buttonOps[3].setPreferredSize(new Dimension(78, 95));
 		buttonOps[3].setBackground(new Color(18,29,38,255));
 		buttonOps[3].setBorderPainted(true);
 		panelBottom.add(buttonOps[3], gbc);
-
-		// buttonOps[]
+		
 		panelBottom.setBackground(new Color(220,237,250,255));
 
 		frame.setVisible(true);	
@@ -188,11 +185,12 @@ public class Laskulator extends JFrame implements ActionListener{
 		
 	/***** Operations *******/
 		
-		if(e.getSource() == buttonOps[0]) {
+		if(e.getSource() == buttonOps[0]) //Clear button
+		{
 			textfield.setText(null);
 		}
 		
-		if(e.getSource() == buttonOps[3]) 
+		if(e.getSource() == buttonOps[3]) // Equal Button
 		{
 			String answer= null;;
 			textfield.setText(null);
@@ -273,13 +271,13 @@ public class Laskulator extends JFrame implements ActionListener{
 		}
 		
 		
-		if(e.getSource() == buttonOps[1]) 
+		if(e.getSource() == buttonOps[1]) // Negative sign button
 		{
 				textfield.setText("-");
 			
 		}
 		
-		if(e.getSource() == buttonOps[2]) 
+		if(e.getSource() == buttonOps[2]) //Delete button 
 		{
 			
 			if(textfield.getText().length()>0) 
