@@ -37,41 +37,19 @@ public class Laskulator extends JFrame implements ActionListener{
 		
 		// Centre Panel
 		frame.add(panelCenter, BorderLayout.CENTER);
-		
 		panelCenter.setBackground(new Color(220,237,250,255));
-//		panelCenter.setPreferredSize(new Dimension(410, 40));
 		
-		String[] nameNos = new String[buttonNos.length];
-		nameNos[0] = new String("1");
-		nameNos[1] = new String("2");
-		nameNos[2] = new String("+");
-		nameNos[3] = new String("3");
-		nameNos[4] = new String("4");
-		nameNos[5] = new String("-");
-		nameNos[6] = new String("5");
-		nameNos[7] = new String("6");
-		nameNos[8] = new String("x");
-		nameNos[9] = new String("7");
-		nameNos[10] = new String("8");
-		nameNos[11] = new String("÷");
-		nameNos[12] = new String("9");
-		nameNos[13] = new String("0");
-		nameNos[14] = new String(".");
-		
-		
+		String[] nameNos = {"1","2","+","3","4","-","5","6","x","7","8","÷","9","0","."};
 		for(int i = 0; i< buttonNos.length; i++) {
 			buttonNos[i] = new JButton(nameNos[i]);
 			buttonNos[i].addActionListener(this);
 			buttonNos[i].setPreferredSize(dim);
 			buttonNos[i].setFont(new Font("SansSerif", Font.BOLD, 25));
 			buttonNos[i].setBackground(new Color(48,49,54,255));
-			// buttonNos[i].setBorder(BorderFactory.createLineBorder(new Color(48,49,54,255)));
-			// buttonNos[i].setBorderPainted(false);
 			buttonNos[i].setForeground(new Color(39,115,169,255));
 			panelCenter.add(buttonNos[i]);
 		}
 		
-
 //Bottom Panel
 		frame.add(panelBottom, BorderLayout.SOUTH);
 		
@@ -79,12 +57,7 @@ public class Laskulator extends JFrame implements ActionListener{
 		panelBottom.setPreferredSize(new Dimension(410, 110));
 		GridBagConstraints gbc = new GridBagConstraints();
 
-		String[] nameOps = new String[buttonOps.length];
-		nameOps[0] = new String("C");
-		nameOps[1] = new String("(-)");
-		nameOps[2] = new String("DEL");
-		nameOps[3] = new String("=");
-		
+		String[] nameOps = {"C","(-)", "DEL", "="};
 		for(int i= 0; i< buttonOps.length; i++) {
 			buttonOps[i] = new JButton(nameOps[i]);
 			buttonOps[i].addActionListener(this);
@@ -93,7 +66,6 @@ public class Laskulator extends JFrame implements ActionListener{
 			buttonOps[i].setBackground(new Color(96,96,96,255));
 			buttonOps[i].setForeground(new Color(39,115,169,255));
 			buttonOps[i].setBorderPainted(true);
-			// panelBottom.add(buttonOps[i]);
 		}
 		gbc.insets = new Insets(0, 5,0,0);
 		gbc.gridx = 0;
@@ -120,9 +92,6 @@ public class Laskulator extends JFrame implements ActionListener{
 
 		// buttonOps[]
 		panelBottom.setBackground(new Color(220,237,250,255));
-//		panelBottom.setLayout(new BorderLayout());
-		
-		// panelBottom.setPreferredSize(new Dimension(410, 50));
 
 		frame.setVisible(true);	
 	}
@@ -137,17 +106,7 @@ public class Laskulator extends JFrame implements ActionListener{
 			if(e.getSource()==buttonNos[i]){
 				textfield.setText(textfield.getText() + buttonNos[i].getText());
 			}
-		}
-		
-
-		
-		
-		
-		
-//		if(e.getSource() == buttonOps[2]) {
-//			textfield.getText((textfield.getText().toString().substring(0).length()-1);
-//		}
-		
+		}	
 		
 /** The operations **/		
 		
@@ -163,7 +122,6 @@ public class Laskulator extends JFrame implements ActionListener{
 			else {
 			ope.setFirst(Double.parseDouble(firstNum));
 			System.out.println("First Number " +ope.getFirst());
-			// buttonNos[2].setForeground(new Color(220,20,60));
 			ope.setSign("+");
 			}
 		}
@@ -176,11 +134,14 @@ public class Laskulator extends JFrame implements ActionListener{
 				JOptionPane.showMessageDialog(this, "Field cannot be empty");
 				System.out.println("Field cannot be empty");
 				textfield.setText(null);	
-			}else {
+			}
+			else 
+			{
 			
 			ope.setFirst(Double.parseDouble(firstNum));
 			System.out.println("First Number " +ope.getFirst());
 			ope.setSign("-");
+
 			}
 		}
 		
@@ -195,11 +156,12 @@ public class Laskulator extends JFrame implements ActionListener{
 				JOptionPane.showMessageDialog(this, "Field cannot be empty");
 				System.out.println("Field cannot be empty");
 				textfield.setText(null);	
-			}else {
+			}
+			else 
+			{
 			ope.setFirst(Double.parseDouble(firstNum));
 			System.out.println("First Number " +ope.getFirst());
 			ope.setSign("*");
-	
 			}
 		}
 		
@@ -208,17 +170,19 @@ public class Laskulator extends JFrame implements ActionListener{
 			
 			//Division
 			textfield.setText(null);
-			if(firstNum.isEmpty() || secondNum.isEmpty()|| signs.isEmpty()) {
+			if(firstNum.isEmpty() || secondNum.isEmpty()|| signs.isEmpty()) 
+			{
 				JOptionPane.showMessageDialog(this, "Field cannot be empty");
 				System.out.println("Field cannot be empty");
 				textfield.setText(null);	
-			}else {
+			}
+			else 
+			{
 			ope.setFirst(Double.parseDouble(firstNum));
 			System.out.println("First Number " +ope.getFirst());
 			// buttonNos[11].setForeground(new Color(220,20,60));
 			ope.setSign("/");
 			}
-			
 		}
 		 
 		
@@ -230,83 +194,112 @@ public class Laskulator extends JFrame implements ActionListener{
 		
 		if(e.getSource() == buttonOps[3]) 
 		{
-
 			String answer= null;;
 			textfield.setText(null);
 			
 			if(firstNum.isEmpty() || secondNum.isEmpty()) 
 			{
-			  System.out.println("Field cannot be empty");
-			 JOptionPane.showMessageDialog(this, "First Number has not been entered");
+				System.out.println("Field cannot be empty");
+				JOptionPane.showMessageDialog(this, "First Number has not been entered");
 			}
-			else 
-			   {
-			    ope.setSecond(Double.parseDouble(secondNum));
-			    System.out.println("Second Number " +ope.getSecond());
-			    System.out.println(ope.equalOps(ope.getSign()));
-			    switch(ope.getSign())
-			   {
-			      case "+": answer = Double.toString(ope.addition()); 
-					if(answer.endsWith(".0")) 
+				else 
 					{
-					  textfield.setText(answer.replace(".0", ""));
-					  System.out.println(answer.replace(".0", ""));	
-					}
-					else 
-					{
-					 System.out.println(answer);
-					 textfield.setText("" + answer);
-					}
-					break;
-				case "-": answer = Double.toString(ope.subtraction()); 
-					if(answer.endsWith(".0")) 
-					{
-					 textfield.setText(answer.replace(".0", ""));
-					 System.out.println(answer.replace(".0", ""));					
-					}
-					else 
-					{
-					 System.out.println(answer);
-					 textfield.setText("" + answer);
-					} 
-					break;
-				case "*":  answer = Double.toString(ope.multiplication()); 						
-					if(answer.endsWith(".0")) 
-					{
-					 textfield.setText(answer.replace(".0", ""));
-					 System.out.println(answer.replace(".0", ""));	
-					}
-					else 
-					   {
-					    System.out.println(answer); ///Testing the out of utput
-					    textfield.setText("" + answer);
-					   }
-					break;
-													
-				case "/":  answer = Double.toString(ope.division());
-													
-					if(answer.endsWith(".0")) 
-					{
-					  textfield.setText(answer.replace(".0", ""));
-					  System.out.println(answer.replace(".0", ""));
-												
-					}
-					else 
-					{
-					  System.out.println(answer);
-					  textfield.setText("" + answer);
-					}
-													
-					break;
-					default: System.out.println("No Such Case");
+					ope.setSecond(Double.parseDouble(secondNum));
+					System.out.println("Second Number " +ope.getSecond());
+					System.out.println(ope.equalOps(ope.getSign()));
 
-					}					
-				}		
-			}		
+						switch(ope.getSign())
+						{
+							case "+": 
+								answer = Double.toString(ope.addition()); 
+								if(answer.endsWith(".0")) 
+								{
+									textfield.setText(answer.replace(".0", ""));
+									System.out.println(answer.replace(".0", ""));	
+								}
+								else 
+								{
+									System.out.println(answer);
+									textfield.setText("" + answer);
+								}
+									break;
+							case "-":answer = Double.toString(ope.subtraction()); 
+								if(answer.endsWith(".0")) 
+								{
+									textfield.setText(answer.replace(".0", ""));
+									System.out.println(answer.replace(".0", ""));
+										
+								}
+								else 
+								{
+									System.out.println(answer);
+									textfield.setText("" + answer);
+								} 
+									break;
+							case "*":  
+								 answer = Double.toString(ope.multiplication()); 
+								if(answer.endsWith(".0")) 
+								{
+									textfield.setText(answer.replace(".0", ""));
+									System.out.println(answer.replace(".0", ""));		
+								}
+								else 
+								{
+									System.out.println(answer);
+									textfield.setText("" + answer);
+								}
+									break;
+													
+							case "/":  
+								answer = Double.toString(ope.division());
+								if(answer.endsWith(".0")) 
+								{
+									textfield.setText(answer.replace(".0", ""));
+									System.out.println(answer.replace(".0", ""));
+								}
+								else 
+								{
+									System.out.println(answer);
+									textfield.setText("" + answer);
+								}
+													
+									break;
+							default: System.out.println("No Such Case");
+						
+						}
+
+					}
+							
+		}
+		
+		
+		if(e.getSource() == buttonOps[1]) 
+		{
+				textfield.setText("-");
+			
+		}
+		
+		if(e.getSource() == buttonOps[2]) 
+		{
+			
+			if(textfield.getText().length()>0) 
+			{	
+			StringBuilder sb = new StringBuilder(textfield.getText());
+			sb.deleteCharAt(textfield.getText().length()-1);
+			String text = sb.toString();
+			textfield.setText(text);
+			}
+			else
+			{
+				JOptionPane.showMessageDialog(this, "Nothing to delete");
+
+			}
+		}
+				
 	}
 	public static void main(String[] args) {
+		// TODO Auto-generated method stub
 		new Laskulator();
-		
 	}
 
 
