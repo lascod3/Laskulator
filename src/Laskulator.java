@@ -180,11 +180,7 @@ public class Laskulator extends JFrame implements ActionListener{
 			
 			ope.setFirst(Double.parseDouble(firstNum));
 			System.out.println("First Number " +ope.getFirst());
-//			labelFirstNum.setText(ope.getFirst() + " " + textfield.getText() + " +");
 			ope.setSign("-");
-			// buttonNos[5].setForeground(new Color(220,20,60));
-			// buttonNos[5].setFont(new Font("SansSerif", Font.BOLD,50));
-
 			}
 		}
 		
@@ -202,9 +198,8 @@ public class Laskulator extends JFrame implements ActionListener{
 			}else {
 			ope.setFirst(Double.parseDouble(firstNum));
 			System.out.println("First Number " +ope.getFirst());
-			// buttonNos[8].setForeground(new Color(220,20,60));
 			ope.setSign("*");
-			// buttonNos[5].setFont(new Font("SansSerif", Font.BOLD,50));
+	
 			}
 		}
 		
