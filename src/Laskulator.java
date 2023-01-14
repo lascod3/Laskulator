@@ -70,17 +70,6 @@ public class Laskulator extends JFrame implements ActionListener{
 			buttonNos[i].setForeground(new Color(39,115,169,255));
 			panelCenter.add(buttonNos[i]);
 		}
-		// buttonNos[2].setBackground(new Color(160,205,244,255));
-		// buttonNos[5].setBackground(new Color(160,205,244,255));
-		// buttonNos[8].setBackground(new Color(160,205,244,255));
-		// buttonNos[11].setBackground(new Color(160,205,244,255));
-		// buttonNos[14].setBackground(new Color(160,205,244,255));
-		
-		// buttonNos[2].setForeground(Color.WHITE);
-		// buttonNos[5].setForeground(Color.WHITE);
-		// buttonNos[8].setForeground(Color.WHITE);
-		// buttonNos[11].setForeground(Color.WHITE);
-		// buttonNos[14].setForeground(Color.WHITE);
 		
 
 //Bottom Panel
@@ -321,25 +310,8 @@ public class Laskulator extends JFrame implements ActionListener{
 			}		
 	}
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
 		new Laskulator();
 		
-//		Scanner sc = new Scanner(System.in);
-//		
-//		System.out.println("Enter first number");
-//		double first = sc.nextDouble();
-//		
-//		System.out.println("Enter second number");
-//		double second = sc.nextDouble();
-//		
-//		System.out.println("Enter second number");
-//		String sign = sc.next();
-//		
-//		Operations ope = new Operations(first,second);
-//		
-////		ope.setSign(sign);
-//		
-//		System.out.println(ope.equalOps(sign));
 	}
 
 
