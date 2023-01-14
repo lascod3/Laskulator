@@ -250,183 +250,75 @@ public class Laskulator extends JFrame implements ActionListener{
 			String answer= null;;
 			textfield.setText(null);
 			
-							if(firstNum.isEmpty() || secondNum.isEmpty()) 
-							{
-								System.out.println("Field cannot be empty");
-								JOptionPane.showMessageDialog(this, "First Number has not been entered");
-							}
-							else 
-							{
-								ope.setSecond(Double.parseDouble(secondNum));
-								System.out.println("Second Number " +ope.getSecond());
-								System.out.println(ope.equalOps(ope.getSign()));
-
-								switch(ope.getSign()){
-									case "+": 
-									answer = Double.toString(ope.addition()); 
-									if(answer.endsWith(".0")) {
-												textfield.setText(answer.replace(".0", ""));
-												System.out.println(answer.replace(".0", ""));	
-									}
-									else {
-											System.out.println(answer);
-											textfield.setText("" + answer);
-										}
-									break;
-									case "-":answer = Double.toString(ope.subtraction()); 
-											if(answer.endsWith(".0")) {
-												textfield.setText(answer.replace(".0", ""));
-												System.out.println(answer.replace(".0", ""));
-										
-											}
-											else {
-												System.out.println(answer);
-												textfield.setText("" + answer);
-											} 
-											break;
-													case "*":  
-														 answer = Double.toString(ope.multiplication()); 
-												
-													if(answer.endsWith(".0")) {
-														textfield.setText(answer.replace(".0", ""));
-														System.out.println(answer.replace(".0", ""));
-												
-													}
-													else {
-														System.out.println(answer);
-														textfield.setText("" + answer);
-													}
-													break;
-													
-													case "/":  
-													answer = Double.toString(ope.division());
-													
-													if(answer.endsWith(".0")) {
-														textfield.setText(answer.replace(".0", ""));
-														System.out.println(answer.replace(".0", ""));
-												
-													}
-													else {
-														System.out.println(answer);
-														textfield.setText("" + answer);
-													}
-													
-													break;
-													default: System.out.println("No Such Case");
-
-													
-													
-								}
-								// for(int i=0; i<buttonNos.length; i++ ) 
-								// {
-								// 	buttonNos[i].setForeground(Color.white);
-								// }
-								
-							// 	if(ope.getSign().equals(null)){
-							// 		JOptionPane.showMessageDialog(this, "First Number has not been entered");
-							// 	}
-							// 	else {
-							
-							// 	System.out.println(ope.getSign());
-							// 	ope.equalOps(ope.getSign());
-								
-							// 	ope.setSecond(Double.parseDouble(secondNum));
-							// 	System.out.println("Second Number " +ope.getSecond());
-								
-								
-							// 	switch(ope.getSign()) 
-							// 	{
-							// 		case "+": answer = Double.toString( ope.addition()); 
-							// 		if(answer.endsWith(".0")) {
-							// 			textfield.setText(answer.replace(".0", ""));
-							// 			System.out.println(answer.replace(".0", ""));
-										
-							// 		}
-							// 		else {
-							// 			System.out.println(answer);
-							// 			textfield.setText("" + answer);
-							// 		}
-							// 		break;
-							// 		case "-":
-							// 			 answer = Double.toString(ope.subtraction()); 
-									
-							// 		if(answer.endsWith(".0")) {
-							// 			textfield.setText(answer.replace(".0", ""));
-							// 			System.out.println(answer.replace(".0", ""));
-								
-							// 		}
-							// 		else {
-							// 			System.out.println(answer);
-							// 			textfield.setText("" + answer);
-							// 		}
-									
-							// 		break;
-							// 		case "*":  
-							// 			 answer = Double.toString(ope.multiplication()); 
-								
-							// 		if(answer.endsWith(".0")) {
-							// 			textfield.setText(answer.replace(".0", ""));
-							// 			System.out.println(answer.replace(".0", ""));
-								
-							// 		}
-							// 		else {
-							// 			System.out.println(answer);
-							// 			textfield.setText("" + answer);
-							// 		}
-							// 		break;
-									
-							// 		case "/":  
-							// 		answer = Double.toString(ope.division());
-									
-							// 		if(answer.endsWith(".0")) {
-							// 			textfield.setText(answer.replace(".0", ""));
-							// 			System.out.println(answer.replace(".0", ""));
-								
-							// 		}
-							// 		else {
-							// 			System.out.println(answer);
-							// 			textfield.setText("" + answer);
-							// 		}
-									
-							// 		break;
-							// 		default: System.out.println("No Such Case");
-									
-							// 	}
-							// 		for(int i=0; i<buttonNos.length; i++ ) 
-							// 		{
-							// 			buttonNos[i].setForeground(Color.white);
-							// 		}
-							// 	}
-							
-							}
-							
+			if(firstNum.isEmpty() || secondNum.isEmpty()) 
+			{
+			  System.out.println("Field cannot be empty");
+			 JOptionPane.showMessageDialog(this, "First Number has not been entered");
 			}
-		
-		
-		if(e.getSource() == buttonOps[1]) {
-			textfield.setText("-");
-		}
-		
-		if(e.getSource() == buttonOps[2]) {
-			
-			if(textfield.getText().length()>0) {	
-			StringBuilder sb = new StringBuilder(textfield.getText());
-			sb.deleteCharAt(textfield.getText().length()-1);
-			String text = sb.toString();
-			textfield.setText(text);
-			}
-			else{
-				JOptionPane.showMessageDialog(this, "Nothing to delete");
+			else 
+			   {
+			    ope.setSecond(Double.parseDouble(secondNum));
+			    System.out.println("Second Number " +ope.getSecond());
+			    System.out.println(ope.equalOps(ope.getSign()));
+			    switch(ope.getSign())
+			   {
+			      case "+": answer = Double.toString(ope.addition()); 
+					if(answer.endsWith(".0")) 
+					{
+					  textfield.setText(answer.replace(".0", ""));
+					  System.out.println(answer.replace(".0", ""));	
+					}
+					else 
+					{
+					 System.out.println(answer);
+					 textfield.setText("" + answer);
+					}
+					break;
+				case "-": answer = Double.toString(ope.subtraction()); 
+					if(answer.endsWith(".0")) 
+					{
+					 textfield.setText(answer.replace(".0", ""));
+					 System.out.println(answer.replace(".0", ""));					
+					}
+					else 
+					{
+					 System.out.println(answer);
+					 textfield.setText("" + answer);
+					} 
+					break;
+				case "*":  answer = Double.toString(ope.multiplication()); 						
+					if(answer.endsWith(".0")) 
+					{
+					 textfield.setText(answer.replace(".0", ""));
+					 System.out.println(answer.replace(".0", ""));	
+					}
+					else 
+					   {
+					    System.out.println(answer); ///Testing the out of utput
+					    textfield.setText("" + answer);
+					   }
+					break;
+													
+				case "/":  answer = Double.toString(ope.division());
+													
+					if(answer.endsWith(".0")) 
+					{
+					  textfield.setText(answer.replace(".0", ""));
+					  System.out.println(answer.replace(".0", ""));
+												
+					}
+					else 
+					{
+					  System.out.println(answer);
+					  textfield.setText("" + answer);
+					}
+													
+					break;
+					default: System.out.println("No Such Case");
 
-			}
-			
-//			String text = textfield.getText();
-//			textfield.setText(null);
-//			for(int i=0; i<text.length()-1; i++) {
-//				textfield.setText(textfield.getText()+ text.charAt(i));
-//			}
-		}
-				
+					}					
+				}		
+			}		
 	}
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
