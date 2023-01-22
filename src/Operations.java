@@ -4,12 +4,11 @@ public class Operations {
 	private double firstNumber;
 	private double secondNumber;
 	private String signs;
-	private double total;
+
 	
 	public Operations(double firstNumber, double secondNumber){
 		this.firstNumber = firstNumber;
 		this.secondNumber = secondNumber;
-		total = 0; 
 
 	}
 
@@ -39,30 +38,10 @@ public class Operations {
 		return secondNumber;
 	}
 	
-	public double addition() {
-		
-		return total = firstNumber + secondNumber;
+	public double addition() {	
+		return firstNumber + secondNumber;
 		
 	}
-//	public boolean checkFirst() {
-//		while(true) {
-//		if(firstNumber==0) {
-//			return false;	
-//		}
-//		else {
-//			total = total+firstNumber;
-//			return true;
-//		}
-//		}
-//	}
-//	
-//	public double getTotal() {
-//		return total;
-//	}
-//	public void setTotal(double totalIn) {
-//		total = totalIn;
-//	}
-	
 	
 	public double subtraction() {
 		return firstNumber - secondNumber;
@@ -93,8 +72,6 @@ public class Operations {
 		default: System.out.println("No such case");
 		}
 		return result;
-		
-		
 		
 	}
 }

@@ -8,37 +8,75 @@ public class Laskulator extends JFrame implements ActionListener{
 	JFrame frame = new JFrame("Laskulator");
 	private JTextField textfield = new JTextField(12);
 
-	Operations ope = new Operations(0, 0);
+	Operations ope = new Operations(0,0);
 
-	JButton[] buttonNos = new JButton[15];
-	JButton[] buttonOps = new JButton[4];
+	private JButton[] buttonNos = new JButton[15];
+	private JButton[] buttonOps = new JButton[4];
+	private String[] labels = new String[3];
+	private JLabel label[] = label = null;
 	
+
 	private JPanel panelTop = new JPanel();
+	private JPanel panelTop2 = new JPanel();
 	private JPanel panelCenter = new JPanel();
 	private JPanel panelBottom = new JPanel();
 	
 	private Dimension dim = new Dimension(100, 45);
 	
 	public Laskulator() {
-		frame.setSize(410, 455);
+		frame.setSize(410, 550);
 		frame.setLocationRelativeTo(frame);
 		frame.setLayout(new BorderLayout());
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		textfield.setEditable(false);
 		frame.setResizable(false);
 	
-		
+		GridBagConstraints gbc = new GridBagConstraints();
+
 		//Top Panel
+		
 		frame.add(panelTop, BorderLayout.NORTH);
 		panelTop.setBackground(new Color(220,237,250,255));
-		panelTop.setPreferredSize(new Dimension(410, 55));
-		panelTop.add(textfield).setFont(new Font("SansSerif", Font.BOLD, 30));
-		textfield.setBackground(Color.white);
+		panelTop.setLayout(new GridBagLayout());
+		panelTop.setPreferredSize(new Dimension(410, 150));
+		
+		
+		label = new JLabel[labels.length];
+		for(int i=0; i<label.length; i++) {
+			label[i] = new JLabel(labels[i]);
+			label[i].setFont(new Font("SansSerif", Font.BOLD, 25));
+			label[i].setForeground(new Color(230,242,250));
+		}
+		
+		
+		gbc.gridx = 0;
+		gbc.gridy = 0;
+		panelTop2.setPreferredSize(new Dimension(200, 40));
+		
+		panelTop2.setLayout(new FlowLayout());
+		panelTop2.setBackground(new Color(25,48,65,255));
+		panelTop2.add(label[0]);
+		panelTop2.add(label[1]);
+		panelTop2.add(label[2]);
+		panelTop.add(panelTop2,gbc);
+
+		gbc.insets = new Insets(30,0, 0,0);
+		gbc.gridx = 0;
+		gbc.gridy = 1;
+		textfield.setFont(new Font("SansSerif", Font.BOLD,26));
+		textfield.setForeground(new Color(39,115,169,255));
+		textfield.setBorder(BorderFactory.createLineBorder(new Color(39,115,169,255), 5));
+		panelTop.add(textfield,gbc);
+		
+
+		// panelTop.setPreferredSize(new Dimension(410, 55));
+		// panelTop.add(textfield).setFont(new Font("SansSerif", Font.BOLD, 30));
+		// textfield.setBackground(Color.white);
 		
 		// Centre Panel
 		frame.add(panelCenter, BorderLayout.CENTER);
 		panelCenter.setBackground(new Color(220,237,250,255));
-		
+//		panelCenter.setPreferredSize(new Dimension(410, 400));
 		String[] nameNos = {"1","2","+","3","4","-","5","6","x","7","8","÷","9","0","."};
 		for(int i = 0; i< buttonNos.length; i++) {
 			buttonNos[i] = new JButton(nameNos[i]);
@@ -55,7 +93,7 @@ public class Laskulator extends JFrame implements ActionListener{
 		
 		panelBottom.setLayout(new GridBagLayout());
 		panelBottom.setPreferredSize(new Dimension(410, 110));
-		GridBagConstraints gbc = new GridBagConstraints();
+		
 
 		String[] nameOps = {"C","(-)", "DEL", "="};
 		for(int i= 0; i< buttonOps.length; i++) {
@@ -97,11 +135,12 @@ public class Laskulator extends JFrame implements ActionListener{
 		String firstNum = textfield.getText();
 		String secondNum = textfield.getText();
 		String signs = textfield.getText();
-		
+	
 		
 		for(int i=0; i<buttonNos.length; i++ ) {
 			if(e.getSource()==buttonNos[i]){
 				textfield.setText(textfield.getText() + buttonNos[i].getText());
+				
 			}
 		}	
 		
@@ -119,7 +158,12 @@ public class Laskulator extends JFrame implements ActionListener{
 			else {
 			ope.setFirst(Double.parseDouble(firstNum));
 			System.out.println("First Number " +ope.getFirst());
+			
+			label[0].setText(Double.toString(ope.getFirst()));
+			String fz = checkingFirstZero();
 			ope.setSign("+");
+			label[1].setText(ope.getSign());
+			
 			}
 		}
 		
@@ -137,7 +181,12 @@ public class Laskulator extends JFrame implements ActionListener{
 			
 			ope.setFirst(Double.parseDouble(firstNum));
 			System.out.println("First Number " +ope.getFirst());
+			
+			
+			label[0].setText(Double.toString(ope.getFirst()));
+			String fz = checkingFirstZero();
 			ope.setSign("-");
+			label[1].setText(ope.getSign());
 
 			}
 		}
@@ -158,7 +207,12 @@ public class Laskulator extends JFrame implements ActionListener{
 			{
 			ope.setFirst(Double.parseDouble(firstNum));
 			System.out.println("First Number " +ope.getFirst());
+			
+			
+			label[0].setText(Double.toString(ope.getFirst()));
+			String fz = checkingFirstZero();
 			ope.setSign("*");
+			label[1].setText(ope.getSign());
 			}
 		}
 		
@@ -177,8 +231,11 @@ public class Laskulator extends JFrame implements ActionListener{
 			{
 			ope.setFirst(Double.parseDouble(firstNum));
 			System.out.println("First Number " +ope.getFirst());
-			// buttonNos[11].setForeground(new Color(220,20,60));
+			
+			label[0].setText(Double.toString(ope.getFirst()));
+			String fz = checkingFirstZero();
 			ope.setSign("/");
+			label[1].setText(ope.getSign());
 			}
 		}
 		 
@@ -188,6 +245,12 @@ public class Laskulator extends JFrame implements ActionListener{
 		if(e.getSource() == buttonOps[0]) //Clear button
 		{
 			textfield.setText(null);
+//			label[0].setText(null);
+//			label = new JLabel[labels.length];
+			for(int i=0; i<labels.length; i++) {
+				label[i].setText(null);
+			}
+			
 		}
 		
 		if(e.getSource() == buttonOps[3]) // Equal Button
@@ -203,9 +266,13 @@ public class Laskulator extends JFrame implements ActionListener{
 				else 
 					{
 					ope.setSecond(Double.parseDouble(secondNum));
+					
 					System.out.println("Second Number " +ope.getSecond());
+					ope.equalOps(ope.getSign());
 					System.out.println(ope.equalOps(ope.getSign()));
-
+					
+					String sz = checkingSecondZero();
+					
 						switch(ope.getSign())
 						{
 							case "+": 
@@ -293,8 +360,40 @@ public class Laskulator extends JFrame implements ActionListener{
 
 			}
 		}
-				
+			
 	}
+	
+	
+public String checkingFirstZero() {
+		
+		String labelSt  = new String(Double.toString(ope.getFirst()));
+		
+		if(labelSt.endsWith(".0")) 
+		{
+			label[0].setText(labelSt .replace(".0", ""));
+		}
+		else 
+		{
+			label[0].setText(Double.toString(ope.getFirst()));
+		}
+		return labelSt;
+	}
+
+	public String checkingSecondZero() {
+		
+		String labelSt  = new String(Double.toString(ope.getSecond()));
+		
+		if(labelSt.endsWith(".0")) 
+		{
+			label[2].setText(labelSt .replace(".0", ""));
+		}
+		else 
+		{
+			label[2].setText(Double.toString(ope.getSecond()));
+		}
+		return labelSt;
+	}
+	
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		new Laskulator();
