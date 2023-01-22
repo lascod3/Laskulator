@@ -156,6 +156,10 @@ public class Laskulator extends JFrame implements ActionListener{
 				textfield.setText(null);	
 			}
 			else {
+
+				if(!firstNum.isEmpty()){
+					
+				}
 			ope.setFirst(Double.parseDouble(firstNum));
 			System.out.println("First Number " +ope.getFirst());
 			
@@ -393,7 +397,7 @@ public String checkingFirstZero() {
 		}
 		return labelSt;
 	}
-	
+
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		new Laskulator();
