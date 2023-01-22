@@ -4,7 +4,7 @@ public class Operations {
 	private double firstNumber;
 	private double secondNumber;
 	private String signs;
-	private static double total;
+	// private static double total;
 	
 	public Operations(double firstNumber, double secondNumber){
 		this.firstNumber = firstNumber;

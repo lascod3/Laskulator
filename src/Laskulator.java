@@ -156,10 +156,6 @@ public class Laskulator extends JFrame implements ActionListener{
 				textfield.setText(null);	
 			}
 			else {
-
-				if(!firstNum.isEmpty()){
-					
-				}
 			ope.setFirst(Double.parseDouble(firstNum));
 			System.out.println("First Number " +ope.getFirst());
 			
