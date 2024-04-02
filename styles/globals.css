@@ -1,0 +1,114 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  color: rgb(54, 54, 54);
+}
+main {
+  min-width: 100vw;
+  min-height: 100vh;
+  background: linear-gradient(
+    180deg,
+    rgba(245, 245, 245, 1),
+    rgba(176, 196, 222, 1) 100%,
+    rgba(245, 245, 245, 1)
+  );
+}
+header {
+  min-height: 5vh;
+  max-width: 100vw;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: linear-gradient(
+    45deg,
+    rgb(245, 245, 245),
+    rgb(255, 250, 250) 150%,
+    rgb(245, 245, 245)
+  );
+  padding: 5px;
+}
+
+nav {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* create Button */
+.createButton {
+  background: rgba(63, 0, 255, 1);
+  border: 2px ridge rgba(63, 0, 255, 1);
+  color: rgb(245, 245, 245);
+}
+
+.createButton:hover {
+  background: rgb(245, 245, 245);
+  color: rgb(105, 105, 105);
+  border: 2px ridge rgba(63, 0, 255, 1);
+}
+
+.openDropdownButton {
+  background: rgba(63, 0, 255, 1);
+  border: 2px ridge rgba(63, 0, 255, 1);
+  color: rgb(245, 245, 245);
+}
+
+div.mobileDropdown {
+  background: rgb(245, 245, 245);
+  filter: drop-shadow(1px 1px 1px rgba(0, 0, 0, 0.3));
+}
+/* .mobileDropdown li{
+text-align: left;
+} */
+div.mobileDropdown:hover .dropdownlist:not(:hover) {
+  filter: blur(2px);
+}
+
+.dropdownlist:last-child {
+  background: rgba(63, 0, 255, 1);
+  color: rgb(245, 245, 245);
+}
+
+/* signou Button */
+.signoutButton {
+  border: 2px ridge rgba(63, 0, 255, 1);
+}
+
+h1 {
+  color: rgb(44, 44, 44);
+}
+.profileIcon {
+  color: red;
+}
+
+h2 {
+  background-image: linear-gradient(
+    90deg,
+    rgba(63, 0, 255, 1),
+    rgba(0, 191, 255, 1),
+    rgba(118, 171, 223, 1),
+    rgba(63, 0, 255, 1)
+  );
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+p {
+  color: rgb(132, 132, 132);
+}
+
+section:nth-child(1) {
+  display: flex;
+  justify-content: center;
+  min-height: 25vh;
+}
+
+section:nth-child(2) {
+  min-height: 100vh;
+  /* background: red; */
+}
